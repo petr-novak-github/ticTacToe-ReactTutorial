@@ -1,0 +1,59 @@
+1055
+udelam si hru tictac toe podle tutorialu
+https://reactjs.org/tutorial/tutorial.html
+
+uvnitr tutorialu je odkaz na js tutorial, to bych si mel taky nekdy udelat
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
+
+A component takes in parameters, called props (short for “properties”), and returns a hierarchy of views to display via the render method.
+
+react api reference by si taky chtelo projit
+https://reactjs.org/docs/react-api.html#createelement
+
+JSX comes with the full power of JavaScript. You can put any JavaScript expressions within braces inside JSX. Each React element is a JavaScript object that you can store in a variable or pass around in your program.
+
+Congratulations! You’ve just “passed a prop” from a parent Board component to a child Square component. Passing props is how information flows in React apps, from parents to children.
+
+Notice how with onClick={() => alert('click')}, we’re passing a function as the onClick prop. React will only call this function after a click. Forgetting () => and writing onClick={alert('click')} is a common mistake, and would fire the alert every time the component re-renders.
+
+As a next step, we want the Square component to “remember” that it got clicked, and fill it with an “X” mark. To “remember” things, components use state.
+
+React components can have state by setting this.state in their constructors. this.state should be considered as private to a React component that it’s defined in. Let’s store the current value of the Square in this.state, and change it when the Square is clicked.
+
+First, we’ll add a constructor to the class to initialize the state:
+class Square extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: null,
+    };
+  }
+
+In JavaScript classes, you need to always call super when defining the constructor of a subclass. All React component classes that have a constructor should start with a super(props) call.
+
+board je fotr, square je decko
+propsy proudi od decka k fotrovi
+v decku square vytvarim constructor ktery vyuziva propsy fotra
+
+When you call setState in a component, React automatically updates the child components inside of it too.
+-takze kdyz aktualizuju stav v decku tak se promitne do fotra
+
+The parent component can pass the state back down to the children by using props; 
+this keeps the child components in sync with each other and with the parent component.
+
+Delete the constructor from Square because Square no longer keeps track of the game’s state
+
+In React, it’s conventional to use on[Event] names for props which represent events and handle[Event] for the methods which handle the events.
+
+In React terms, the Square components are now controlled components. 
+Immutability makes complex features much easier to implement.
+The main benefit of immutability is that it helps you build pure components in React.
+
+tohle bych si rad precetl je tam odkayz
+You can learn more about shouldComponentUpdate() and how you can build pure components by reading Optimizing Performance.
+
+
+
+
+
+
